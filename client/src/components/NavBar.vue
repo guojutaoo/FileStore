@@ -19,17 +19,13 @@ export default {
 h1 {
     text-align: left;
     margin-left: 50px;
+    color: white;
 }
 .navbar {
     background-image: radial-gradient(#16d9e3 0%, #30c7ec 47%, #46aef7 100%);
     width: 100%;
     height: 80px;
     position: fixed;
-}
-.iconGroup {
-    position: absolute;
-    margin-top: -60px;
-    right: 0px;
 }
 #icon {
     font-size: 30px;

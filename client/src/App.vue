@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <NavBar />
+    <SearchBar />
+    <p1>Search Result</p1>
     <List />
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -9,6 +11,7 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import NavBar from './components/NavBar.vue'
+import SearchBar from './components/SearchBar.vue'
 import List from './components/List.vue'
 import BootstrapVue from 'bootstrap-vue'
 import Vue from 'vue'
@@ -20,12 +23,14 @@ export default {
   components: {
     // HelloWorld,
     NavBar,
+    SearchBar,
     List,
   }
 }
 </script>
 
 <style>
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
