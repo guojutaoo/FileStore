@@ -2,6 +2,8 @@
   <div id="app">
     <NavBar />
     <SearchBar />
+    <router-link to='/read'>read pdf</router-link>
+    <router-view />
     <p1>Search Result</p1>
     <List />
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
@@ -16,7 +18,10 @@ import List from './components/List.vue'
 import BootstrapVue from 'bootstrap-vue'
 import Vue from 'vue'
 
+
 Vue.use(BootstrapVue)
+
+
 
 export default {
   name: 'app',
