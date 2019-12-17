@@ -3,15 +3,29 @@
       <h1>Navbar</h1>
       <div class="iconGroup">
             <font-awesome-icon icon="history" id="icon"/>
+            <SideBar />
             <font-awesome-icon icon="star" id="icon"/>
             <font-awesome-icon icon="user-secret" id="icon"/>
+            <font-awesome-icon icon="plus" id="icon" @click="showModal" v-b-modal.modal-prevent-closing/>
+            <FileUpload v-if="showModal" />
       </div>
   </div>
 </template>
 
 <script>
+import FileUpload from './FileUpload';
+import SideBar from './SideBar';
 export default {
     name: 'NavBar',
+    components: {
+        FileUpload,
+        SideBar,
+    },
+    methods: {
+        showModal(){
+            this.show = true;
+        }
+    }
 }
 </script>
 
