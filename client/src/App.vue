@@ -3,10 +3,9 @@
     <NavBar />
     <SearchBar />
     <router-link to='/read'>read pdf</router-link>
+    <!-- <p1>Search Result</p1> -->
     <router-view />
-    <p1>Search Result</p1>
-    <List />
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <!-- <List /> -->
   </div>
 </template>
 
@@ -14,7 +13,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import NavBar from './components/NavBar.vue'
 import SearchBar from './components/SearchBar.vue'
-import List from './components/List.vue'
+// import List from './components/List.vue'
 import BootstrapVue from 'bootstrap-vue'
 import Vue from 'vue'
 
@@ -29,7 +28,7 @@ export default {
     // HelloWorld,
     NavBar,
     SearchBar,
-    List,
+    // List,
   }
 }
 </script>
