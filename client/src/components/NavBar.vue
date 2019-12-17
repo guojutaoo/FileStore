@@ -1,9 +1,10 @@
 <template>
   <div class="navbar">
+      <SideBar />
       <h1>Navbar</h1>
       <div class="iconGroup">
-            <font-awesome-icon icon="history" id="icon"/>
-            <SideBar />
+            <font-awesome-icon icon="history" id="icon" @click="showSideBar"/>
+            
             <font-awesome-icon icon="star" id="icon"/>
             <font-awesome-icon icon="user-secret" id="icon"/>
             <font-awesome-icon icon="plus" id="icon" @click="showModal" v-b-modal.modal-prevent-closing/>
@@ -24,6 +25,9 @@ export default {
     methods: {
         showModal(){
             this.show = true;
+        },
+        shwoSideBar(){
+            this.shwoSideBar = false;
         }
     }
 }

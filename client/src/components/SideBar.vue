@@ -1,58 +1,90 @@
 <template>
-  <div class="sidebar">
-  <nav class="sidebar-nav">
-    <ul class="nav">
-      <li class="nav-title">Nav Title</li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="nav-icon cui-speedometer"></i> Nav item
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="nav-icon cui-speedometer"></i> With badge
-          <span class="badge badge-primary">NEW</span>
-        </a>
-      </li>
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link nav-dropdown-toggle" href="#">
-          <i class="nav-icon cui-puzzle"></i> Nav dropdown
-        </a>
-        <ul class="nav-dropdown-items">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="nav-icon cui-puzzle"></i> Nav dropdown item
-            </a>
+  <mdb-container class="green-text">
+    <div class="deep-purple-skin">
+      <mdb-side-nav logo="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" sideNavClass="sn-bg-4" mask="strong" :OpenedFromOutside.sync="toggleA" hidden waves>
+        <ul>
+          <li>
+            <ul class="social">
+            <li><a href="#" class="icons-sm fb-ic"><mdb-icon fab icon="facebook" /></a></li>
+            <li><a href="#" class="icons-sm pin-ic"><mdb-icon fab icon="pinterest" /></a></li>
+            <li><a href="#" class="icons-sm gplus-ic"><mdb-icon fab icon="google-plus" /></a></li>
+            <li><a href="#" class="icons-sm tw-ic"><mdb-icon fab icon="twitter" /></a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="nav-icon cui-puzzle"></i> Nav dropdown item
-            </a>
+          <li>
+            <form class="search-form" role="search">
+              <div class="form-group md-form mt-0 pt-1 ripple-parent" @click="wave">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+            </form>
+          </li>
+          <li>
+            <mdb-side-nav-nav>
+              <mdb-side-nav-cat name="Submit blog" icon="chevron-right">
+                <mdb-side-nav-item href="#">Submit listing</mdb-side-nav-item>
+                <mdb-side-nav-item href="#">Registration form</mdb-side-nav-item>
+              </mdb-side-nav-cat>
+              <mdb-side-nav-cat name="Instruction" icon="hand-pointer-o">
+                <mdb-side-nav-item href="#">For bloggers</mdb-side-nav-item>
+                <mdb-side-nav-item href="#">For authors</mdb-side-nav-item>
+              </mdb-side-nav-cat>
+              <mdb-side-nav-cat name="About" icon="eye">
+                <mdb-side-nav-item href="#">Introduction</mdb-side-nav-item>
+                <mdb-side-nav-item href="#">Monthly meetings</mdb-side-nav-item>
+              </mdb-side-nav-cat>
+              <mdb-side-nav-cat name="Contact me" icon="envelope-o">
+                <mdb-side-nav-item href="#">FAQ</mdb-side-nav-item>
+                <mdb-side-nav-item href="#">Write a message</mdb-side-nav-item>
+              </mdb-side-nav-cat>
+              <mdb-side-nav-item header icon="envelope" href="#">Write a message</mdb-side-nav-item>
+              <mdb-side-nav-item header icon="user" href="#">Profile</mdb-side-nav-item>
+            </mdb-side-nav-nav>
           </li>
         </ul>
-      </li>
-      <li class="nav-item mt-auto">
-        <a class="nav-link nav-link-success" href="https://coreui.io">
-          <i class="nav-icon cui-cloud-download"></i> Download CoreUI</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-link-danger" href="https://coreui.io/pro/">
-          <i class="nav-icon cui-layers"></i> Try CoreUI
-          <strong>PRO</strong>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-</div>
+      </mdb-side-nav>
+    </div>
+    <div class="text-center icon-div">
+      <mdb-icon icon="bars" size="5x" @click.native="toggleLeftSideNav"/>
+    </div>
+  </mdb-container>
 </template>
 
 <script>
-export default {
-
-}
+  import { mdbSideNavNav, mdbSideNavCat, mdbSideNavItem, mdbContainer, mdbIcon} from 'mdbvue';
+  export default {
+    name: 'SideBar',
+    components: {
+    //   mdbSideNav,
+      mdbSideNavNav,
+      mdbSideNavCat,
+      mdbSideNavItem,
+      mdbContainer,
+      mdbIcon
+    },
+    data(){
+      return {
+        toggleA: false,
+        waves: true
+      };
+    },
+    methods: {
+      toggleLeftSideNav() {
+        this.toggleA = !this.toggleA;
+      }
+    },
+    // mixins: [waves]
+  }
 </script>
 
 <style>
-
+  .container {
+    height: 750px;
+  }
+  .icon-div {
+    width: 49%;
+    display: inline-block;
+  }
+  .icon-div .fa {
+    cursor: pointer;
+  }
 </style>

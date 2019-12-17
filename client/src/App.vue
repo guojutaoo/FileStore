@@ -2,6 +2,7 @@
   <div id="app">
     <NavBar />
     <SearchBar />
+    <SideBar />
     <router-link to='/read'>read pdf</router-link>
     <!-- <p1>Search Result</p1> -->
     <router-view />
@@ -14,6 +15,7 @@
 import NavBar from './components/NavBar.vue'
 import SearchBar from './components/SearchBar.vue'
 // import List from './components/List.vue'
+import SideBar from './components/SideBar.vue'
 import BootstrapVue from 'bootstrap-vue'
 import Vue from 'vue'
 
@@ -29,6 +31,7 @@ export default {
     // HelloWorld,
     NavBar,
     SearchBar,
+    SideBar
     // List,
   }
 }
